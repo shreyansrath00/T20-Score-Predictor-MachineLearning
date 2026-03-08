@@ -2,8 +2,9 @@ import streamlit as st
 import pickle
 import numpy as np
 
-# Load trained model
-model = pickle.load(open("t20_model.pkl", "rb"))
+from t20_model import train_model
+
+model = train_model()
 
 st.set_page_config(page_title="T20 Score Predictor", page_icon="🏏")
 
