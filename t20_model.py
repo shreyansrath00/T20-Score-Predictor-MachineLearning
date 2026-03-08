@@ -92,3 +92,25 @@ print("Model Accuracy:", accuracy)
 pickle.dump(model, open("t20_model.pkl", "wb"))
 
 print("Model saved successfully")
+
+def train_model():
+    import pandas as pd
+    from sklearn.ensemble import RandomForestRegressor
+
+    # create small dummy training data
+    data = {
+        "current_score":[50,80,100,120,150],
+        "balls_left":[90,60,40,30,20],
+        "current_run_rate":[6,8,9,10,11],
+        "final_score":[160,175,190,205,220]
+    }
+
+    df = pd.DataFrame(data)
+
+    X = df[["current_score","balls_left","current_run_rate"]]
+    y = df["final_score"]
+
+    model = RandomForestRegressor()
+    model.fit(X,y)
+
+    return model
