@@ -6,7 +6,7 @@ from sklearn.metrics import r2_score
 import pickle
 
 # Load dataset
-df = pd.read_csv("t20_matches.csv")
+df = pd.read_csv("t20_demo_data.csv")
 
 # Convert innings column from string → Python object
 df['innings'] = df['innings'].apply(ast.literal_eval)
